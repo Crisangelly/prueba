@@ -135,130 +135,47 @@ Operaciones a las cuales tiene acceso el Usuario Administrador: <br>
 
 - URL para las vistas:
 
-http://localhost:3000/home/login (Ingresar usuario)
+http://localhost:3000/home                               (Inicio)
 
-http://localhost:3000/Modalidad/nuevaModalidad (Ingresar nueva Modalidad)
+http://localhost:3000/home/register                     (Registrar un usuario)
 
-http://localhost:3000/equipo/verEquipo         (ver Equipos)
+http://localhost:3000/home/login                        (Generar token usuario)
 
+http://localhost:3000/Modalidad/nuevaModalidad          (Ingresar nueva Modalidad)
 
+http://localhost:3000/equipo/nuevoEquipo                (Ingresar nuevo Equipo)
 
--URL para cada operación en ThunderClient:  
+http://localhost:3000/patrocinador/nuevoPatrocinador    (Ingresar nuevo Patrocinador)
 
+http://localhost:3000/categoria/nuevaCategoria          (Ingresar nueva Categoria)
 
-/// Método GET
-1.	Mostrar patrocinantes  
+http://localhost:3000/equipo/verEquipo                  (ver Equipos)
 
-•	GET => http://localhost:3000/patrocinador/   
+http://localhost:3000/modalidad/ver                     (ver Modalidades)
 
-2.	Mostrar Modalidades y sus categorías  
+http://localhost:3000/patrocinador/ver                  (ver Patrocinador)
 
-•	GET => http://localhost:3000/modalidad/2  
-
-3.	Mostrar los equipos participantes  
-
-•	GET => http://localhost:3000/equipo/  
-
-4.	Mostrar modalidades  
-
-•	GET => http://localhost:3000/modalidad/  
-
-5.	Mostrar categorías  
-
-•	GET => http://localhost:3000/categoria/  
-
-6.	Mostrar los equipos participantes inscritos en cada categoría  
-
-•	GET=> http://localhost:3000/categoria/participantes (Con el objeto)  
-
-Ejemplo:
-{  <br>
-  "nombre_categoria": "Recolección de objetos"  <br> 
-}  
+http://localhost:3000/patrocinador/todos                (ver Patrocinador con usuario Administrador)
 
 
-•	GET=> http://localhost:3000/categoria/equipos/1 (Con la url)  
+Ejemplo de como ingresar un equipo desde Thunder Client: (Realizar operacion con usuario Editor)
 
-7.	Mostrar Equipos y sus padrinos  
+•	POST => http://localhost:3000/equipo
 
-•	GET=> http://localhost:3000/equipo/padrinos  
-
-
-///	Método POST  
+Una vez que generes tu token y guardes lo guardes en Bearer ingresa el siguiente JSON
 
 
-1.	Ingresar equipos participantes
-•	POST => http://localhost:3000/equipo/
--Para este ejemplo puedes tomar el objeto e insertar que nuevos valores va a llevar cada propiedad.  
-
-
-{  <br>
-    "representante": "Miguel",  <br>
+{    <br>
+  "representante": "Miguel", <br> 
     "email": "M1key9090@gmail.com",  <br>
-    "telefono": "0412-7544567",
-    "nombre_de_equipo": "Robots de la suerte",
-    "participantes": "Miguel,Orlando",
-    "comentario": ""
+    "telefono": "0412-7544567",<br>
+    "nombre_de_equipo": "Robots de la suerte",<br>
+    "participantes": "Miguel,Orlando",<br>
+    "comentario": "" <br>
   }
-  
-
-2.	Ingresar patrocinantes  
-
-•	POST => http://localhost:3000/patrocinador/  
-
-3.	Ingresar modalidad  
-
-•	POST=> http://localhost:3000/modalidad/  
-
-4.	Ingresar categoría a cada modalidad  
-
-•	POST=> http://localhost:3000/categoria  
-
-///	Método PUT  
 
 
-1.	Editar patrocinador (Ejemplo)  
-
-•	PUT=> http://localhost:3000/patrocinador/2 (el 2 representa el id de la entidad que se desea actualizar)  
 
 
--Para este ejemplo puedes tomar el objeto y modificar las propiedades que necesites actualizar.
-
-{
-   "nombre_comercial": "Uni",
-    "persona_de_contacto": "Mari",
-    "telefono": "0414-7542212",
-    "idPatrocinio": 2,
-    "comentario": "suerte a todos"
-}  
-
-
-2.	Editar equipo participante  
-
-•	PUT=> http://localhost:3000/equipo/2  
-
-3.	Editar categoría (PATCH y PUT)  
-
-•	PATCH=> http://localhost:3000/categoria/3  
-
-
-///	Método DELETE  
-
-
-1.	Eliminar de la inscripción de un equipo participante alguna categoría inscrita  
-
-•	DELETE=> http://localhost:3000/equipo/sin_categoria/3/2  
-
-2.	Eliminar equipo  
-
-•	DELETE=> http://localhost:3000/equipo/3  
-
-3.	Eliminar categoría  
-
-•	DELETE=> http://localhost:3000/categoria/3  
-
-4.	Eliminar patrocinador  
-
-•	DELETE=> http://localhost:3000/patrocinador/2
 
 
